@@ -1,6 +1,6 @@
 /*
 
-## IMPORTANT NOTE --- IMPORTANT 
+## IMPORTANT NOTE --- IMPORTANT
 The master for this file is located at:
 https://github.com/joostn/openjscad/tree/gh-pages
 That is the gh-pages branch of the joostn/openjscad project
@@ -1376,7 +1376,7 @@ for solid CAD anyway.
                 sidemapisempty = false;
                 break;
             }
-            if (!sidemapisempty) {
+            if (!sidemapisempty && (typeof OpenJsCad !== 'undefined')) {
                 // throw new Error("!sidemapisempty");
             OpenJsCad.log("!sidemapisempty");
             }
@@ -4025,7 +4025,7 @@ for solid CAD anyway.
     };
 
     // Get an orthonormal basis for the standard XYZ planes.
-    // Parameters: the names of two 3D axes. The 2d x axis will map to the first given 3D axis, the 2d y 
+    // Parameters: the names of two 3D axes. The 2d x axis will map to the first given 3D axis, the 2d y
     // axis will map to the second.
     // Prepend the axis with a "-" to invert the direction of this axis.
     // For example: CSG.OrthoNormalBasis.GetCartesian("-Y","Z")
@@ -5827,7 +5827,7 @@ for solid CAD anyway.
         /*
          * given 2 connectors, this returns all polygons of a "wall" between 2
          * copies of this cag, positioned in 3d space as "bottom" and
-         * "top" plane per connectors toConnector1, and toConnector2, respectively 
+         * "top" plane per connectors toConnector1, and toConnector2, respectively
          */
         _toWallPolygons: function(options) {
             // normals are going to be correct as long as toConn2.point - toConn1.point
@@ -6077,7 +6077,7 @@ for solid CAD anyway.
             return result;
         },
 
-        // extrude the CAG in a certain plane. 
+        // extrude the CAG in a certain plane.
         // Giving just a plane is not enough, multiple different extrusions in the same plane would be possible
         // by rotating around the plane's origin. An additional right-hand vector should be specified as well,
         // and this is exactly a CSG.OrthoNormalBasis.
